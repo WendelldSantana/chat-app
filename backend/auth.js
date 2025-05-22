@@ -47,7 +47,7 @@ router.post('/login', (req, res) => {
 
     //Verifica se enviou os campos
     if(!email || !senha ){
-        res.status(400).json( {msg:"Preencha todos os campos "})
+        return res.status(400).json( {msg:"Preencha todos os campos "})
     }
 
     //Busca o usuário pelo email
@@ -57,7 +57,7 @@ router.post('/login', (req, res) => {
             
             //Verifica se o email está cadastrado |EX: if(!result.length)
             if(results.length === 0) return res.status(401).json({ msg: "Email não cadastrado" })
-    })
+    
 
     const usuario = results[0]
 
@@ -65,9 +65,10 @@ router.post('/login', (req, res) => {
     const senhaCorreta = bcrypt.compareSync(senha, usuario.senha)
     if(!senhaCorreta){
         return res.status(401).json({ msg:"Senha Incorreta"})
-    }
+    } 
 
     //Sucesso no Login
-    return res.status(200).json({ msg: "Login realizado com sucesso", usuario: usuario.usuario})
+    return res.status(200).json({ msg: "Login realizado com sucesso", usuario: usuario.nome})
+    })
 })
 module.exports =  router
