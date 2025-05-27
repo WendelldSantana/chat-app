@@ -1,0 +1,154 @@
+/* Estilo geral do corpo */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* preto puxado pro cinza */
+    font-family: 'Roboto', sans-serif;
+    color: #e0e0e0; /* texto clarinho */
+}
+
+/* Sidebar (lado esquerdo) */
+.sidebar {
+    width: 370px;
+    height: 100vh;
+    background-color: #191919;
+    padding: 20px;
+    box-sizing: border-box;
+}
+h2{
+    color: #bb5700fa;
+    font-size: 35px;
+    font-family:serif;
+    margin: 10px;    
+    padding-left: 30px;
+   
+}
+
+/* Itens da Sidebar */
+ .sidebar ul {
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    margin-top: 50%;
+}
+
+.sidebar ul li {
+    padding: 15px 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.sidebar li{
+    margin: 100px 0;
+    border-bottom: 1px solid rgba(230, 126, 7, 0.134);
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.sidebar ul li:hover {
+    background-color:  #bb5700a8;
+}
+
+/* Área do chat */
+.chat-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #1e1e1e;
+}
+
+
+/* Mensagens */
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* mensagens ficam lá embaixo */
+    background-color: #0909097f;
+}
+
+/* Campo de digitar mensagem */
+.chat-input {
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    height: 50px; /* altura fixa */
+    flex-shrink: 0;
+    background-color:#0909097f ;
+}
+
+.chat-input input[type="text"] {
+    flex: 1;
+    padding: 15px;
+    background-color: #262626;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.chat-input button {
+    background-color: #bb5700fa;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.chat-input button:hover {
+    background-color: #002385;
+}
+
+/* Mensagem geral */
+.mensagem-texto {
+    display: flex;
+    flex-direction: column;
+    max-width: 60%;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    word-wrap: break-word;
+}
+
+/* Mensagem minha (lado direito) */
+.minha-mensagem {
+    align-self: flex-end;
+    background-color: #903b03; 
+    text-align: right;
+}
+
+/* Mensagem dos outros (lado esquerdo) */
+.mensagem-outro {
+    align-self: flex-start;
+    background-color:  #0a2e7c; /* cinzinha escuro */
+    text-align: left;
+}
+
+/* Info do autor */
+.msg-autor {
+    font-weight: bold;
+    font-size: 0.85em;
+    margin-bottom: 5px;
+}
+
+/* Texto da mensagem */
+.msg-texto {
+    font-size: 1em;
+}
+
+/* Horário */
+.msg-horario {
+    font-size: 0.7em;
+    margin-top: 5px;
+    opacity: 0.7;
+}
