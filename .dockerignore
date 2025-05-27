@@ -1,0 +1,20 @@
+# Ignora node_modules (instala no container via npm install)
+node_modules
+
+# Ignora build do front (vai ser gerado dentro do container)
+dist
+build
+
+# Ignora arquivos desnecessários
+*.log
+.env
+.git
+.gitignore
+Dockerfile
+docker-compose.yml
+.vscode
+*.md
+*.DS_Store
+npm-debug.log
+yarn-debug.log
+yarn-error.log
