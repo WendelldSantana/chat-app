@@ -1,6 +1,7 @@
 # Ignora node_modules (instala no container via npm install)
 node_modules
-
+**/node_modules
+npm-debug.log
 # Ignora build do front (vai ser gerado dentro do container)
 dist
 build

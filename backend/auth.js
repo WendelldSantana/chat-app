@@ -5,10 +5,11 @@ const bcrypt = require ('bcryptjs')
 const router = express.Router()
 
 const db = mysql.createConnection({
-    host: 'localhost',
+    host: 'mysql',
     user: 'root',
-    password: '8708',
-    database: 'chat_app'
+    password: 'root',
+    database: 'chat_app',
+    port: 3306
 })
 
 db.connect((error)=>{

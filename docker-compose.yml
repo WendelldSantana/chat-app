@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: chatdb
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  backend:
+    build: 
+       context: ./backend
+    container_name: chat-backend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql
+  
+    command: ["bash", "./wait-for-it.sh", "mysql:3306", "--", "npm", "start"]
+
+  batepapo-app:
+    build: ./batepapo-app
+    container_name: chat-frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./batepapo-app:/app
+    command: ["npm", "run", "dev"]
+
+volumes:
+  mysql_data:
